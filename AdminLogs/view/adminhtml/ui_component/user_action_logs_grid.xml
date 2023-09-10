@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">user_action_logs_grid.user_action_logs_grid_data_source</item>
+            <item name="deps" xsi:type="string">user_action_logs_grid.user_action_logs_grid_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">user_action_logs_grid_columns</item>
+    </argument>
+  <dataSource name="user_action_logs_grid_data_source">
+    <argument name="dataProvider" xsi:type="configurableObject">
+        <argument name="class" xsi:type="string">Training\AdminLogs\Ui\DataProvider\UserAction\UserActionDataProvider</argument>
+        <argument name="name" xsi:type="string">user_action_logs_grid_data_source</argument>
+        <argument name="primaryFieldName" xsi:type="string">id</argument>
+        <argument name="requestFieldName" xsi:type="string">id</argument>
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                 <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">id</item>
+                    </item>
+            </item>
+        </argument>
+    </argument>
+ </dataSource>
+
+<listingToolbar name="listing_top">
+    <massaction name="listing_massaction">
+        <action name="soft_delete">
+            <settings>
+                <type>soft_delete</type>
+                <label translate="true">Archive</label>
+                <url path="useraction/useraction/SoftDeleteUserAction"/>
+                <confirm>
+                    <message translate="true">Are you sure you want to archive the selected action(s)?</message>
+                    <title translate="true">Soft Delete Confirmation</title>
+                </confirm>
+            </settings>
+        </action>
+        <action name="delete">
+            <settings>
+                <type>delete</type>
+                <label translate="true">Delete</label>
+                <url path="useraction/useraction/DeleteUserAction"/>
+                <confirm>
+                    <message translate="true">Are you sure you want to delete the selected action(s)?</message>
+                    <title translate="true">Delete Confirmation</title>
+                </confirm>
+            </settings>
+        </action>
+    </massaction>
+    <bookmark name="bookmarks"/>
+    <columnsControls name="columns_controls"/>
+    <exportButton name="export_button"/>
+     <filterSearch name="username"/>
+    <filters name="listing_filters"/>
+    <paging name="listing_paging"/>
+</listingToolbar>
+
+<columns name="user_action_logs_grid_columns">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="childDefaults" xsi:type="array">
+                <item name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">user_action_logs_grid.user_action_logs_grid.user_action_logs_grid_columns.ids</item>
+                    <item name="target" xsi:type="string">applyAction</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">view</item>
+                        <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                    </item>
+                </item>
+            </item>
+        </item>
+    </argument>
+
+   <selectionsColumn name="ids">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="indexField" xsi:type="string">id</item>
+            </item>
+        </argument>
+    </selectionsColumn>
+
+   <column name="id">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">10</item>
+                <item name="label" xsi:type="string" translate="true">ID</item>
+            </item>
+        </argument>
+    </column>
+
+    <column name="username">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">20</item>
+                <item name="label" xsi:type="string" translate="true">UserName</item>
+                <item name="filter" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </column>
+
+    <column name="user_id" >
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">50</item>
+                <item name="label" xsi:type="string" translate="true">User ID</item>
+                <item name="filter" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </column>
+
+    <column name="email" >
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">60</item>
+                <item name="label" xsi:type="string" translate="true">Email</item>
+                <item name="filter" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </column>
+
+    <column name="ip_address">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">70</item>
+                <item name="label" xsi:type="string" translate="true">IP Address</item>
+                <item name="filter" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </column>
+
+    <column name="action_type">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">90</item>
+                <item name="label" xsi:type="string" translate="true">Action Type</item>
+                <item name="filter" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </column>
+
+    <column name="affected_module">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">100</item>
+                <item name="label" xsi:type="string" translate="true">Affected Module</item>
+                <item name="filter" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </column>
+
+</columns>
+</listing>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="model_save_after">
+        <observer name="training_adminlogs_after_model_saved" instance="Training\AdminLogs\Observer\AfterModelSavedObserver" />
+    </event>
+    <event name="model_delete_after">
+        <observer name="training_adminlogs_after_model_deleted" instance="Training\AdminLogs\Observer\AfterModelDeletedObserver" />
+    </event>
+    <event name="model_load_after">
+        <observer name="training_adminlogs_after_model_loaded" instance="Training\AdminLogs\Observer\AfterModelLoadedObserver" />
+    </event>
+    <event name="backend_auth_user_login_success">
+        <observer name="LoginSuccess" instance="Training\AdminLogs\Observer\LoginSuccessObserver" />
+    </event>
+    <event name="backend_auth_user_login_failed">
+        <observer name="LoginFailure" instance="Training\AdminLogs\Observer\LoginFailureObserver" />
+    </event>
+</config>

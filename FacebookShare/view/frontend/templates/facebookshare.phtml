@@ -1,0 +1,15 @@
+<?php
+$productUrl = 'https://your-static-product-url';
+
+var_dump($block->getProductUrl());
+?>
+<?php if ($block->isModuleEnabled()): ?>
+    <div class="facebook-share">
+        <div class="social-media-title"><?= __('Share on Social Media') ?></div>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode($productUrl) ?>" target="_blank" rel="noopener noreferrer">
+            <img src="<?= $block->getViewFileUrl('Training_FacebookShare::images/facebook-share-icon.png') ?>" alt="<?= __('Share on Facebook') ?>" />
+        </a>
+    </div>
+<?php endif; ?>
+
+

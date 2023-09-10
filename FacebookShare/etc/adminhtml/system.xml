@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="facebookshare" translate="label" sortOrder="10">
+            <label>Facebook Share</label>
+        </tab>
+        <section id="facebookshare" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Facebook Share</label>
+            <tab>facebookshare</tab>
+            <resource>Training_FacebookShare::config_facebookshare</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Facebook Share</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="share_link" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook Share Link</label>
+                    <comment>Enter the Facebook Share link (default: https://www.facebook.com/sharer/sharer.php?u=).</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

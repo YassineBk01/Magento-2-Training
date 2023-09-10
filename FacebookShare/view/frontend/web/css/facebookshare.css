@@ -1,0 +1,19 @@
+.facebook-share {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.facebook-share img {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+}

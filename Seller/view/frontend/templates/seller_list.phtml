@@ -1,0 +1,11 @@
+<?php
+/** @var  */
+$sellers = $block->getSellers();
+?>
+
+<ul>
+    <?php    foreach ($sellers as $seller): ?>
+    <li><?php echo __('Seller : %1',$seller->getName()) ?></li>
+
+    <?php endforeach;?>
+</ul>

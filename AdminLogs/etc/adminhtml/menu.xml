@@ -1,0 +1,24 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Training_AdminLogs::logs_menu" title="Admin Logs"
+        module="Training_AdminLogs" sortOrder="1000" resource="Training_AdminLogs::showlogs"
+            translate="title"
+        />
+
+        <add id="Training_AdminLogs::logs_actions" title="Actions Log"
+        module="Training_AdminLogs" sortOrder="1000" resource="Training_AdminLogs::showlogs"
+            translate="title" action="useraction" parent="Training_AdminLogs::logs_menu"
+        />
+
+        <add id="Training_AdminLogs::archive_logs" title="Archive Logs"
+             module="Training_AdminLogs" sortOrder="1000" resource="Training_AdminLogs::showlogs"
+             translate="title" action="useraction/archivelogs" parent="Training_AdminLogs::logs_menu"
+        />
+
+        <add id="Training_AdminLogs::session_logs" title="Session Logs"
+        module="Training_AdminLogs" sortOrder="1000" resource="Training_AdminLogs::showlogs"
+        translate="title" action="useraction/sessionlogs" parent="Training_AdminLogs::logs_menu"
+        />
+
+    </menu>
+</config>

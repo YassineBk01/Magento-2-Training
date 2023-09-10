@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Training_Seller::seller" title="Seller" module="Training_Seller" sortOrder="51" resource="Training_Seller::config"/>
+        <add id="Training_Seller::config" title="Configuration" module="Training_Seller" sortOrder="10" action="seller/seller/config" resource="Training_Seller::config" parent="Training_Seller::seller"/>
+        <add id="Training_Seller::index" title="Sellers" module="Training_Seller" sortOrder="20" action="seller/seller/index" resource="Training_Seller::config" parent="Training_Seller::seller"/>
+    </menu>
+</config>
+
+

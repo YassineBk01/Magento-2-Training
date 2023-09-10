@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="user_action" resource="default" engine="innodb" comment="User Session Action Attribute Backend Table">
+
+        <column xsi:type="int" name="id" nullable="false" comment="ID" unsigned="true" identity="true"/>
+        <column xsi:type="datetime" name="login_date" comment="Login Date"/>
+        <column xsi:type="varchar" name="username" length="255" nullable="false" comment="Username"/>
+        <column xsi:type="varchar" name="session_id" length="255" nullable="false" comment="Session ID"/>
+        <column xsi:type="int" name="user_id" unsigned="true" nullable="false" comment="User ID"/>
+        <column xsi:type="varchar" name="email" length="255" nullable="false" comment="Email"/>
+        <column xsi:type="varchar" name="ip_address" length="255" nullable="false" comment="IP Address"/>
+        <column xsi:type="datetime" name="logout_date" comment="Logout Date"/>
+        <column xsi:type="varchar" name="action_type" length="255" nullable="false" comment="Action Type"/>
+        <column xsi:type="varchar" name="affected_module" length="255" nullable="false" comment="Affected Module"/>
+        <column xsi:type="boolean" name="is_active" nullable="true" comment="Is Active"/>
+        <column xsi:type="boolean" name="is_deleted" nullable="false" comment="Is the record is soft deleted" default="0"/>
+
+        <constraint xsi:type="foreign" referenceId="fk_user_action_admin_user" table="user_action" column="user_id"
+                    referenceTable="admin_user" referenceColumn="user_id" onDelete="CASCADE"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

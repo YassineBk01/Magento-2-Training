@@ -1,0 +1,15 @@
+{
+    "training_seller": {
+        "column": {
+            "seller_id": true,
+            "identifier": true,
+            "name": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "TRAINING_SELLER_IDENTIFIER": true
+        }
+    }
+}

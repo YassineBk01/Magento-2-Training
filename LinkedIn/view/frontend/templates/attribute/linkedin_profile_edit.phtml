@@ -1,0 +1,16 @@
+<?php
+/** @var $block Training\LinkedIn\Block\Customer\Account\EditLinkedinProfile */
+
+$isRequired = $block->isLinkedInProfileRequired();
+$isVisible = $block->isLinkedInProfileVisible();
+$linkedinProfile = $block->getLinkedInProfile();
+
+?>
+<?php if($isVisible) {?>
+<div class="field linkedin-profile">
+    <label for="linkedin-profile" class="label"><span><?= $block->escapeHtml(__('LinkedIn Profile')) ?></span></label>
+    <div class="control">
+        <input type="text" name="linkedin_profile" id="linkedin-profile" title="<?= $block->escapeHtmlAttr(__('LinkedIn Profile')) ?>" class="input-text" <?php if ($isRequired): ?>required<?php endif; ?> data-validate="{'validate-url':true, 'validate-length':true, 'maxTextLength':250}" value="<?= $block->escapeHtmlAttr($linkedinProfile) ?>">
+    </div>
+</div>
+<?php } ?>
